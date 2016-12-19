@@ -31,7 +31,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.activity_blank, parent, false);
+        View view = inflater.inflate(R.layout.container_countries, parent, false);
         MyHolder holder = new MyHolder(view);
         return holder;
     }
@@ -41,7 +41,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         MyHolder myHolder = (MyHolder) holder;
         Countries current = data.get(position);
         myHolder.countryName.setText(current.name);
-        myHolder.countryId.setText("Size: " + current.id);
+        myHolder.countryId.setText(current.id);
 
 
     }
