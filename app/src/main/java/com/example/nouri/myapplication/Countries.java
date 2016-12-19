@@ -7,7 +7,6 @@ package com.example.nouri.myapplication;
 public class Countries {
 
 
-
     String name;
     String id;
 

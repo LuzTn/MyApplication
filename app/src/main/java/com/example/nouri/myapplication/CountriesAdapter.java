@@ -3,6 +3,7 @@ package com.example.nouri.myapplication;
 /**
  * Created by nouri on 19/12/2016.
  */
+
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import java.util.Collections;
 import java.util.List;
+
 public class CountriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
@@ -44,9 +47,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
 
-
-
-    class MyHolder extends RecyclerView.ViewHolder{
+    class MyHolder extends RecyclerView.ViewHolder {
 
         TextView countryName;
 
@@ -55,7 +56,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         // create constructor to get widget reference
         public MyHolder(View itemView) {
             super(itemView);
-            countryName= (TextView) itemView.findViewById(R.id.name);
+            countryName = (TextView) itemView.findViewById(R.id.name);
             countryId = (TextView) itemView.findViewById(R.id.id);
         }
 

@@ -27,12 +27,13 @@ class CountryUpdate extends BroadcastReceiver {
     public CountryUpdate(blankActivity ba) {
         this.ba = ba;
     }
+
     public CountryUpdate() {
     }
-    public CountryUpdate(Nour nour) {
-        this.nour=nour;
-    }
 
+    public CountryUpdate(Nour nour) {
+        this.nour = nour;
+    }
 
 
     @Override
@@ -70,12 +71,9 @@ class CountryUpdate extends BroadcastReceiver {
             is.close();
             Log.d("json", is.toString());
             return new JSONArray(new String(buffer, "UTF-8"));
-            }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -84,6 +82,7 @@ class CountryUpdate extends BroadcastReceiver {
         }
         return null;
     }
+
     public JSONArray getCountriesFromFileba() {
         try {
             InputStream is = null;
@@ -95,12 +94,9 @@ class CountryUpdate extends BroadcastReceiver {
             is.close();
             Log.d("json", is.toString());
             return new JSONArray(new String(buffer, "UTF-8"));
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

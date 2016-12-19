@@ -51,17 +51,17 @@ public class blankActivity extends AppCompatActivity {
 
             // Setup and Handover data to recyclerview
 
-                mCountries = (RecyclerView) findViewById(R.id.countries);
-                mAdapter = new CountriesAdapter(this, data);
+            mCountries = (RecyclerView) findViewById(R.id.countries);
+            mAdapter = new CountriesAdapter(this, data);
             LinearLayoutManager llm = new LinearLayoutManager(this);
             llm.setOrientation(LinearLayoutManager.VERTICAL);
             mCountries.setLayoutManager(llm);
             mCountries.setAdapter(mAdapter);
-            }catch(JSONException e){
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            }
+        } catch (JSONException e) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
+        }
 
 
     }
 
-    }
+}
