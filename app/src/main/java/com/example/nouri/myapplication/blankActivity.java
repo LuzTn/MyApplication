@@ -58,6 +58,7 @@ Log.i("id: ",count.id);
 
             mAdapter = new CountriesAdapter(this, data);
             mCountries.setAdapter(mAdapter);
+            //scroll
             mCountries.smoothScrollToPosition(mAdapter.getItemCount());
 
 
