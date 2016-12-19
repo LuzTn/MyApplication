@@ -11,6 +11,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +19,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -100,12 +103,12 @@ public class Nour extends AppCompatActivity {
         CountryUpdate cu = new CountryUpdate(this);
         LocalBroadcastManager.getInstance(this).registerReceiver(cu, intentFilter);
 
-       /* JSONArray array = cu.getCountriesFromFile();
+       JSONArray array = cu.getCountriesFromFile();
         if (array != null) {
             Log.i("json", array.toString());
             Log.i("length", "equals" + array.length());
 
-        }*/
+        }
     }
 
 

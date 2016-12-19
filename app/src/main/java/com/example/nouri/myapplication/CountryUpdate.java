@@ -20,7 +20,7 @@ import java.io.UnsupportedEncodingException;
 /**
  * Created by nouri on 21/11/2016.
  */
-class CountryUpdate extends BroadcastReceiver {
+public class CountryUpdate extends BroadcastReceiver {
     private blankActivity ba;
     private Nour nour;
 
@@ -85,6 +85,7 @@ class CountryUpdate extends BroadcastReceiver {
 
     public JSONArray getCountriesFromFileba() {
         try {
+            Log.i("test ","ba");
             InputStream is = null;
             is = new FileInputStream(ba.getCacheDir() + "/" + "countries.json");
 

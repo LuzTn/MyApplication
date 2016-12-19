@@ -27,14 +27,14 @@ public class blankActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blank);
 
 
-        ArrayList<Countries> data = new ArrayList<>();
+        List<Countries> data = new ArrayList<>();
 
         CountryUpdate cu = new CountryUpdate(this);
 
         try {
 
             JSONArray countt = cu.getCountriesFromFileba();
-            Log.i("json", countt.toString());
+           Log.i("json", countt.toString());
 
             // Extract data from json and store into ArrayList as class objects
             for (int i = 0; i < countt.length(); i++) {
@@ -42,7 +42,7 @@ public class blankActivity extends AppCompatActivity {
                 Countries count = new Countries();
                 count.name = json_data.getString("name");
                 count.id = json_data.getString("id");
-
+Log.i("id: ",count.id);
 
                 data.add(count);
 
@@ -52,11 +52,15 @@ public class blankActivity extends AppCompatActivity {
             // Setup and Handover data to recyclerview
 
             mCountries = (RecyclerView) findViewById(R.id.countries);
+
+
+            mCountries.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+
             mAdapter = new CountriesAdapter(this, data);
-            LinearLayoutManager llm = new LinearLayoutManager(this);
-            llm.setOrientation(LinearLayoutManager.VERTICAL);
-            mCountries.setLayoutManager(llm);
             mCountries.setAdapter(mAdapter);
+            mCountries.smoothScrollToPosition(mAdapter.getItemCount());
+
+
         } catch (JSONException e) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
         }
