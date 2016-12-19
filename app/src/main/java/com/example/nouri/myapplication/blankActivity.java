@@ -59,7 +59,7 @@ Log.i("id: ",count.id);
             mAdapter = new CountriesAdapter(this, data);
             mCountries.setAdapter(mAdapter);
             //scroll
-            mCountries.smoothScrollToPosition(mAdapter.getItemCount());
+            mCountries.smoothScrollToPosition(mAdapter.getItemCount() - 1 );
 
 
         } catch (JSONException e) {
